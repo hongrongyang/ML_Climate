@@ -1,1 +1,109 @@
-# ML_Climate
+# EV Charging Management Project – File Overview
+
+## 📌 ccem.py
+
+- **Purpose**: Implements the Constrained Cross-Entropy Method (CEM) agent.
+- **Functionality**:
+  - Core of the safe deep RL algorithm for charging price optimization.
+  - Selects charging price actions over a planning horizon to maximize reward (profit/social welfare) under safety constraints (cost limits).
+  - Samples and evaluates action sequences using a learned dynamics model.
+  - Filters out action sequences that violate cost thresholds.
+  - Includes a tunable Lagrange multiplier `kappa` to penalize constraint violations (ensuring policy safety).
+  - Can optionally learn `kappa` during training.
+
+## 📌 Dijkstra.py
+
+- **Purpose**: Computes shortest paths in the transportation network.
+- **Functionality**:
+  - Classical Dijkstra algorithm implementation.
+  - Maintains an open set with tentative distances and finalizes shortest paths.
+  - Used to calculate travel distance/time between nodes (EV origins and charging stations).
+  - Helps influence demand distribution based on travel cost/distance.
+
+## 📌 data_gen.py
+
+- **Purpose**: Generates and samples EV demand data.
+- **Functionality**:
+  - Loads base EV trip dataset and produces randomized subsets.
+  - `ev_true` and `ev_true0` generate EV parameters like:
+    - Arrival time
+    - Battery capacity
+    - Initial/desired SOC
+    - Required energy
+    - Estimated charging time
+  - Uses real/synthetic data (e.g., `ev_true.npy`), shuffled for realistic variability.
+  - Ensures diverse simulation inputs for RL training.
+
+## 📌 env.py
+
+- **Purpose**: Simulates the EV charging environment (grid + transport).
+- **Functionality**:
+  - Defines `Environment` class.
+  - Integrates with a `pandapower` 33-bus network and Dijkstra-based routing.
+  - Each step:
+    - Generates new EV requests (via `ev_true`).
+    - Computes travel/wait times and evaluates cost at each station.
+    - Determines EV choices based on combined cost (price + time).
+    - Updates power grid with charging loads and runs power flow.
+    - Computes:
+      - Reward (e.g., profit or social welfare)
+      - Cost (penalty for unsafe conditions like overloads or voltage drops)
+  - **Constraint features**:
+    - Grid safety (line overloads/voltage drops)
+    - Partial implementation for carbon intensity constraints.
+
+## 📌 main.py
+
+- **Purpose**: Orchestrates training and main execution.
+- **Functionality**:
+  - Entry point and training script.
+  - Parses command-line arguments for RL configuration.
+  - Initializes:
+    - Environment (`Env`)
+    - Dynamics model (`ProbEnsemble`)
+    - Agent (`ConstrainedCEM`)
+  - Training loop:
+    - Uses `EnvSampler` for environment interaction.
+    - Collects `(state, action, reward, cost, next state)` tuples.
+    - Stores experiences in replay buffer.
+    - Trains ensemble model after fixed steps.
+    - Uses model for internal rollouts and safer planning.
+  - Tracks:
+    - Rewards and constraint violations.
+    - Updates `kappa` in constraint-aware mode.
+  - Solves bi-level pricing problem via safe RL.
+
+## 📌 models.py
+
+- **Purpose**: Defines probabilistic ensemble model of environment dynamics.
+- **Functionality**:
+  - `ProbEnsemble` class (inherits `nn.Module`).
+  - Predicts:
+    - Next state change (delta)
+    - Reward
+    - Cost
+  - Uses:
+    - Shared fully-connected layers.
+    - Output heads:
+      - `GaussianEnsembleLayer` for state/reward (mean + variance).
+      - `LogisticEnsembleLayer` or Gaussian for cost (binary/continuous).
+  - Ensemble captures model uncertainty, critical for safe RL.
+  - Training:
+    - Minimizes loss over batches (MSE for state/reward, custom for cost).
+    - Adds regularization.
+  - Enables uncertainty-aware planning and conservative decisions.
+
+## 📌 obs_gene.py
+
+- **Purpose**: Generates initial observation (grid + load setup).
+- **Functionality**:
+  - Creates `case33bw` network and modifies for EV stations.
+  - Adds extra generator and modifies line capacities.
+  - Adjusts base loads:
+    - Reduces all buses slightly.
+    - Increases load at EV stations (buses 31, 13, 19).
+  - Runs power flow to collect:
+    - Line loading metrics
+    - Initial condition indicators
+  - Returns `obs` list and reference values (e.g., base loads at stations).
+  - Initializes the environment with realistic conditions before action begins.
