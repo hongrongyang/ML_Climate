@@ -10,6 +10,9 @@ net = pp.networks.case33bw()
 #13:CS2
 #19:CS3
 
+
+
+
 def obs():
     net = pp.networks.case33bw()
     net1 = net
@@ -53,6 +56,7 @@ def obs():
     obs.append(load_percentage9 * 100)
     obs.append(load_percentage17 * 100)
     obs.append(load_percentage27 * 100)
+
 
     obs.append(15)
     obs.append(15)

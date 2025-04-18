@@ -9,6 +9,8 @@ from torch.nn import functional as F
 from torch.utils.data import TensorDataset, DataLoader
 
 
+
+
 def swish(x):
     return x * torch.sigmoid(x)
 
@@ -95,6 +97,8 @@ class LogisticEnsembleLayer(nn.Module):
         train_loss = F.binary_cross_entropy(mean, target, reduce=False)
         train_loss = train_loss.mean(-1).mean(-1).sum()
         return train_loss
+
+
 
 class ProbEnsemble(nn.Module):
 
