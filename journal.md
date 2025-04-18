@@ -73,6 +73,43 @@ We plan to start formulating carbon emission factors and budget constraints next
 -------
 ### 📅 Week 9 (2025.4.3)
 
-This week we implement the carbon flow part 
+### ✅ Weekly Progress Update
 
+This week, our main focus was on implementing the **carbon flow network** within the existing CMDP optimization framework.  
+To improve the environmental sustainability and policy alignment of our original model—designed for EV load scheduling and distribution grid congestion management—we proposed an extension that incorporates **carbon emission modeling and constraints**.
+
+This enhancement supports national carbon neutrality targets (e.g., dual-carbon policy) and can align with external mechanisms such as **carbon trading markets (ETS)**.
+
+### 🔧 Core Dimensions of the Proposed Extension
+
+#### 1. Carbon Flow Modeling: Power → Carbon
+- Assign a **carbon intensity factor** to each type of electricity source (e.g., grid supply, distributed energy), denoted as \( \rho_{n,t}^{CO2} \), representing CO₂ emissions per kWh.
+- Introduce a **carbon budget variable** to dynamically track total emissions across buses and time periods.
+
+#### 2. Carbon Budget Constraints & Cost Mechanisms
+- Set a **global carbon constraint** (e.g., \( \sum CO_2 \leq \text{target}_t \)) to cap total emissions within the system.
+- Alternatively, model emissions as a **penalty or tax term**, and embed it in the DSO or social welfare objective.
+- Use a **shadow price of carbon** or ETS market price to represent marginal emission costs.
+
+#### 3. Objective Function Enhancement: Economic + Environmental
+- The original objective aimed to **maximize total social welfare**, combining: Charging station profit，EV user benefit and DSO net profit 
+- We now formulate a **multi-objective optimization**, adjusting the goal as:
+  - `Maximized Objective = Social Welfare – Carbon Cost × Total Emissions`
+
+### 🧱 Implementation Building Blocks (not limited to):
+
+| Component                        | Description                                                                                       |
+|----------------------------------|---------------------------------------------------------------------------------------------------|
+| Carbon Factor Definition         | Assign emission factor \( \rho_{n,t}^{CO2} \) to each energy source (e.g., grid, distributed, zero-emission). |
+| Node-Level Carbon Flow Modeling  | Calculate emissions at each bus based on power consumption and source-specific emission factors. |
+| Carbon Budget Constraint         | Add a system-wide constraint on total emissions to stay within a predefined carbon cap.          |
+| Objective Function Penalty Term  | Introduce carbon tax or shadow price into the objective to penalize emissions.                   |
+| Multi-objective Formulation      | Expand original goal to balance social welfare and environmental sustainability.                 |
+
+### 🔄 Next Week Plan
+
+Next week, we will focus on **integrating the carbon-aware mechanism with the DRL controller**, specifically:
+- Expanding the state and reward space to include carbon cost and emission signals;
+- Embedding carbon-aware safety constraints within the policy learning process;
+- Evaluating trade-offs between economic efficiency and environmental impact via DRL simulations.
 
