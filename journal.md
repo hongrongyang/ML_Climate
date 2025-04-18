@@ -113,3 +113,21 @@ Next week, we will focus on **integrating the carbon-aware mechanism with the DR
 - Embedding carbon-aware safety constraints within the policy learning process;
 - Evaluating trade-offs between economic efficiency and environmental impact via DRL simulations.
 
+
+-------
+### 📅 Week 10 (2025.4.10)
+
+### ✅ Weekly Progress Update
+This week, we focused on connecting our carbon-aware system with the DRL controller. The main goal was to ensure that the policy can make decisions not only based on user satisfaction and grid safety, but also by considering carbon emissions.
+
+At a high level, we implemented three major enhancements:
+- **State Representation Extension**  
+  Incorporated carbon-related features—such as local emission factors and current carbon budget—into the agent’s state space.
+- **Reward Signal Redesign**  
+  Adjusted the reward function to reflect trade-offs between user satisfaction, network congestion, and environmental impact.
+- **Safety Constraint Integration**  
+  Treated the carbon budget as a cost constraint within the DRL framework, enabling safe policy learning under carbon limits.
+
+### 🔄 Next Week Plan
+Next week, we will begin full-scale integration and optimization of the **EV–CS–DSO–Grid–Carbon** system.  
+The focus will shift to end-to-end coordination, global policy performance evaluation, and scenario-based analysis.
