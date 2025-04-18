@@ -41,6 +41,7 @@ A key aspect lies in the **Grid and DSO integration**:
 - The DSO aims to **maximize total social welfare**, balancing economic revenue, grid reliability, and service quality.
 
 In the original paper, Hongrong develops a flow-based CMDP framework with multiple constraint formulations, including:
+[Please Reference: https://ieeexplore.ieee.org/abstract/document/10298595]
 
 ## 🔒 Constraint Summary Table (CS / DSO / Grid Constraints)
 
