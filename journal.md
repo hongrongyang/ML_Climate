@@ -21,94 +21,34 @@ A key aspect lies in the **Grid and DSO integration**:
 
 In the original paper, Hongrong develops a flow-based CMDP framework with multiple constraint formulations, including:
 
----
+## 🔒 Constraint Summary Table (CS / DSO / Grid Constraints)
 
-### 📘 DSO & Grid Constraints Summary
+### 🧾 CS Constraints (Charging Station)
+| Constraint No. | Name                          | Description                                                                 |
+|----------------|-------------------------------|-----------------------------------------------------------------------------|
+| (29)           | CS Profit Definition          | Defines net profit of CS as revenue minus electricity purchase cost.       |
+| (30)           | CS Revenue from EV Users      | Total revenue from EVs based on charging power and incentive price.        |
+| (31)           | CS Purchase Cost              | Total cost of electricity purchased by CS over time.                        |
+| (32)           | CS Pricing Composition        | Breaks down charging price into power cost, service fee, and incentive fee.|
+| (33)           | CS Incentive Price Bound      | Enforces upper and lower bounds on incentive pricing.                      |
 
-#### ⚡ (34) DSO Profit Formula
+### 🏢 DSO Constraints (Distribution System Operator)
+| Constraint No. | Name                          | Description                                                                 |
+|----------------|-------------------------------|-----------------------------------------------------------------------------|
+| (34)           | DSO Profit Definition         | Net profit as revenue from EVs minus cost of main and distributed power.   |
+| (35)           | Main Grid Purchase Cost       | Calculates cost of purchasing electricity from the main grid.              |
+| (36)           | Distributed Source Cost       | Calculates cost of purchasing electricity from distributed sources.        |
+| (37)           | CS Load Aggregation           | Ensures total charging load equals sum of supply from main and distributed sources. |
 
-\[
-\Pi_t^{DSO} = \sum_{n \in B} \sum_{j \in H_n} \left( C_{n,j,t}^{CS,P} - \lambda_{n,t}^{DSO,M} P_{n,j,t}^{CS,M} - \lambda_{n,t}^{DSO,D} P_{n,j,t}^{CS,D} \right)
-\]
-
-- \( \Pi_t^{DSO} \): DSO’s net profit at time \( t \);
-- \( C_{n,j,t}^{CS,P} \): Revenue from EV users;
-- \( \lambda^{DSO,M/D}_{n,t} \): Electricity purchase price from main grid or distributed generators;
-- \( P^{CS,M/D}_{n,j,t} \): Power purchased by the CS from those sources.
-
-#### ⚡ (35)(36) Power Purchase Costs
-
-\[
-C_{n,j,t}^{DSO,M} = \lambda_{n,t}^{DSO,M} \cdot P_{n,j,t}^{CS,M} \cdot \Delta t
-\]
-
-\[
-C_{n,j,t}^{DSO,D} = \lambda_{n,t}^{DSO,D} \cdot P_{n,j,t}^{CS,D} \cdot \Delta t
-\]
-
-#### ⚡ (37) EV Charging Revenue
-
-\[
-C_{n,j,t}^{CS,P} = \sum_{i=1}^{N_{n,j,t}^{EV}} p_{n,i,t}^{EV} \cdot P_{n,i,t}^{EV} \cdot \Delta t
-\]
-
----
-
-#### 🧠 DSO Constraint Summary Table
-
-| Type                | Description                                                 | Purpose                                                   |
-|---------------------|-------------------------------------------------------------|------------------------------------------------------------|
-| Economic Constraint | Ensures revenue minus cost equals DSO profit                | Helps DSO maximize net revenue or social welfare          |
-| Cost Disaggregation | Distinguishes between main-grid and distributed supply cost | Enables flexible procurement strategy                     |
-| Pricing Structure   | Links EV payment, CS purchase cost, and DSO pricing policy  | Supports boundary-aware incentive pricing optimization    |
-
----
-
-### ⚡ Grid Constraints (Power Flow Equations)
-
-#### (38) Power Balance
-
-\[
-\begin{cases}
-\sum_{mn \in L} (P_{mn,t} - r_{mn} l_{mn,t}) - \sum_{nq \in L} P_{nq,t} = \sum_{j \in H_n} P_{n,j,t}^{CS} + P_n^O - P_n^{DG} \\
-\sum_{mn \in L} (Q_{mn,t} - x_{mn} l_{mn,t}) - \sum_{nq \in L} Q_{nq,t} = Q_{n,t}
-\end{cases}
-\]
-
-#### (39) Voltage Drop Equation
-
-\[
-v_{n,t} = v_{m,t} + 2(P_{mn,t} r_{mn} + Q_{mn,t} x_{mn}) - l_{mn,t}(r_{mn}^2 + x_{mn}^2)
-\]
-
-#### (40) SOCP Constraint (Relaxation)
-
-\[
-\left\|
-\begin{bmatrix}
-2P_{mn,t} \\
-2Q_{mn,t} \\
-l_{mn,t} - v_{n,t}
-\end{bmatrix}
-\right\|_2 \leq l_{mn,t} + v_{m,t}
-\]
-
-#### (41)(42)(43) Operational Bounds
-
-- Voltage:  
-\[
-V_{\min}^2 \leq v_{n,t} \leq V_{\max}^2
-\]
-- Current:
-\[
-0 \leq l_{mn,t} \leq I_{\max}^2
-\]
-- Line Utilization:
-\[
-\phi_{mn,t} = \frac{P_{mn,t}}{P^{L}_{mn}} \leq \phi^{\max}_{mn,t}, \quad \forall (m,n) \in L
-\]
-
----
+### ⚡ Grid Constraints (Power Flow & Physical Feasibility)
+| Constraint No. | Name                          | Description                                                                 |
+|----------------|-------------------------------|-----------------------------------------------------------------------------|
+| (38)           | Power Balance Equation        | Enforces conservation of active and reactive power across the network.     |
+| (39)           | Voltage Drop Model            | Models voltage drop along lines based on line parameters and power flow.   |
+| (40)           | SOCP Relaxation               | Linearized cone constraint for optimization feasibility and convexity.     |
+| (41)           | Voltage Bound Constraint      | Enforces upper and lower voltage limits at all nodes.                      |
+| (42)           | Line Current Limit            | Restricts maximum current flow on each distribution line.                  |
+| (43)           | Line Utilization Constraint   | Limits the ratio of actual power flow to line capacity to prevent overload.|
 
 ### ✅ Weekly Progress Update
 
@@ -120,7 +60,6 @@ We did not add new modules, but we have begun preparing for next week’s extens
 To support this, we surveyed related research in **carbon-aware power dispatch and optimization**.
 
 #### 🔍 Related Research Surveyed (not limited to):
-
 | Topic                    | Recommended Study                                                                 |
 |--------------------------|------------------------------------------------------------------------------------|
 | Low-carbon dispatch      | Wang et al. (IEEE TSG): *Low-carbon economic dispatch with carbon pricing*       |
