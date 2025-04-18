@@ -1,7 +1,11 @@
-### 📅 Week 8 (2025.3.27)
+
 
 Sorry for the late update — our group officially resumed the project after the midterm, as the weeks leading up to spring break were quite busy.
 
+
+-------
+
+### 📅 Week 8 (2025.3.27)
 After careful discussion and planning, we decided to **extend our project** by incorporating **additional carbon flow constraints** into the original EV–CS–DSO–Grid coupled optimization framework.
 
 Our project builds upon Hongrong's previous work:  
@@ -69,7 +73,6 @@ We plan to start formulating carbon emission factors and budget constraints next
 
 
 
-
 -------
 ### 📅 Week 9 (2025.4.3)
 
@@ -131,3 +134,27 @@ At a high level, we implemented three major enhancements:
 ### 🔄 Next Week Plan
 Next week, we will begin full-scale integration and optimization of the **EV–CS–DSO–Grid–Carbon** system.  
 The focus will shift to end-to-end coordination, global policy performance evaluation, and scenario-based analysis.
+
+
+-------
+### 📅 Week 11 (2025.4.11)
+
+### ✅ Weekly Progress Update
+
+This week, we conducted additional research on **carbon trading mechanisms and regional carbon emission profiles**.  
+Our focus included:
+- Carbon emission factors for various energy sources, including coal, wind, and hydro power;
+- Carbon trading market structures in **multiple Chinese cities**, as well as in **New York and California (USA)**.
+These insights are intended to inform how we define and implement carbon flow constraints more realistically and policy-aligned within our system.
+
+### 🔄 Next Week Plan
+
+Next week, we will begin **full-scale integration and optimization** of the complete  
+**EV–CS–DSO–Grid–Carbon** system.
+
+We plan to focus on:
+- End-to-end coordination of all modules;
+- Global policy evaluation under different scenarios;
+- Finalizing experimental design and running initial simulations.
+
+We aim to complete most of the work by the end of the weekend and next week, and generate preliminary results for evaluation.
