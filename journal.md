@@ -1,19 +1,18 @@
 ### 📅 Week 8 (2025.3.27)
 
-- Sorry for the late update — our group officially resumed the project after the midterm, as the weeks leading up to spring break were quite busy.
+Sorry for the late update — our group officially resumed the project after the midterm, as the weeks leading up to spring break were quite busy.
 
-- After careful discussion and planning, we decided to **extend our project** by incorporating **additional carbon flow constraints** into the original EV–CS–DSO–Grid coupled optimization framework.
+After careful discussion and planning, we decided to **extend our project** by incorporating **additional carbon flow constraints** into the original EV–CS–DSO–Grid coupled optimization framework.
 
-- Our project builds upon Hongrong's previous work:  
-**Dynamic Incentive Pricing on Charging Stations for Real-Time Congestion Management in Distribution Network**,  
-which proposed a **dynamic incentive pricing strategy** to influence EV users to adjust their charging behavior in real time.
+Our project builds upon Hongrong's previous work:  
+ - **Dynamic Incentive Pricing on Charging Stations for Real-Time Congestion Management in Distribution Network**, which proposed a **dynamic incentive pricing strategy** to influence EV users to adjust their charging behavior in real time.
 
-- In this framework, the pricing problem is formulated as a **constrained Markov decision process (CMDP)** that integrates:
+In this framework, the pricing problem is formulated as a **constrained Markov decision process (CMDP)** that integrates:
 - Real-time EV behavior and user cost models;
 - Grid-side physical constraints (power flow, voltage, current, congestion);
 - Queueing, driving, and charging costs at charging stations.
 
-- A key aspect lies in the **Grid and DSO integration**:
+A key aspect lies in the **Grid and DSO integration**:
 - Charging stations report real-time load and status to the **Distribution System Operator (DSO)**;
 - The DSO observes grid conditions and broadcasts **time-varying incentive prices** to affect EVs' decisions;
 - Power flow equations (linearized SOCP) and operational constraints are embedded within the CMDP;
@@ -68,5 +67,12 @@ To support this, we surveyed related research in **carbon-aware power dispatch a
 
 We plan to start formulating carbon emission factors and budget constraints next week.
 
+
+
+
+-------
 ### 📅 Week 9 (2025.4.3)
+
+This week we implement the carbon flow part 
+
 
