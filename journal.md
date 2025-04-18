@@ -1,6 +1,24 @@
 
 
-Sorry for the late update — our group officially resumed the project after the midterm, as the weeks leading up to spring break were quite busy.
+### 🌍 Project Overview: Enhancing EV–Grid Coordination with Carbon-Aware Optimization
+
+Our project builds on an existing framework that coordinates electric vehicle (EV) charging, charging station (CS) pricing, and distribution system operator (DSO) decision-making to manage real-time congestion in power distribution networks. The original system formulates this multi-agent interaction as a constrained Markov Decision Process (CMDP), aiming to maximize social welfare by balancing user satisfaction, electricity cost, and grid stability. It integrates power flow equations, queueing dynamics, and incentive pricing into a unified optimization process.
+
+To improve the environmental accountability and policy relevance of this framework, we extend the system by introducing a **carbon flow layer**. Specifically, we:
+
+- Assign **carbon emission factors** to different energy sources (e.g., grid-supplied coal power, distributed solar);
+- Model **carbon emissions at the node level**, tracking the CO₂ output associated with electricity procurement;
+- Embed **carbon budgets or carbon pricing mechanisms** as either constraints or cost terms in the CMDP.
+
+The objective of this extension is to align the system with national and regional **carbon neutrality goals**, such as China's dual-carbon policy or emission trading systems (ETS) in the US and EU. This enables the framework to simulate not only economically and operationally optimal behavior, but also **low-carbon, policy-compliant decision-making**.
+
+By integrating carbon-aware decision signals into the state, reward, and constraint space of the reinforcement learning controller, we aim to design a DRL-based policy that coordinates EV load, grid safety, and environmental sustainability in a holistic and scalable way.
+
+Sorry for the late update — our group officially resumed the project after the midterm, as the weeks leading up to spring break were quite busy. 
+
+So Let's start with our project !!
+
+
 
 
 -------
@@ -145,6 +163,7 @@ This week, we conducted additional research on **carbon trading mechanisms and r
 Our focus included:
 - Carbon emission factors for various energy sources, including coal, wind, and hydro power;
 - Carbon trading market structures in **multiple Chinese cities**, as well as in **New York and California (USA)**.
+
 These insights are intended to inform how we define and implement carbon flow constraints more realistically and policy-aligned within our system.
 
 ### 🔄 Next Week Plan
