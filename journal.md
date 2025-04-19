@@ -169,8 +169,7 @@ These insights are intended to inform how we define and implement carbon flow co
 
 ### 🔄 Next Week Plan
 
-Next week, we will begin **full-scale integration and optimization** of the complete  
-**EV–CS–DSO–Grid–Carbon** system.
+Next week, we will begin **full-scale integration and optimization** of the complete **EV–CS–DSO–Grid–Carbon** system.
 
 We plan to focus on:
 - End-to-end coordination of all modules;
