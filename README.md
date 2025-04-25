@@ -1,4 +1,4 @@
-# EV Charging Management Project – File Overview
+# Dynamic Price Incentive for EV Decarbonization Project – File Overview
 
 ## 📌 ccem.py
 
