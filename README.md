@@ -11,28 +11,6 @@
   - Includes a tunable Lagrange multiplier `kappa` to penalize constraint violations (ensuring policy safety).
   - Can optionally learn `kappa` during training.
 
-## 📌 Dijkstra.py
-
-- **Purpose**: Computes shortest paths in the transportation network.
-- **Functionality**:
-  - Classical Dijkstra algorithm implementation.
-  - Maintains an open set with tentative distances and finalizes shortest paths.
-  - Used to calculate travel distance/time between nodes (EV origins and charging stations).
-  - Helps influence demand distribution based on travel cost/distance.
-
-## 📌 data_gen.py
-
-- **Purpose**: Generates and samples EV demand data.
-- **Functionality**:
-  - Loads base EV trip dataset and produces randomized subsets.
-  - `ev_true` and `ev_true0` generate EV parameters like:
-    - Arrival time
-    - Battery capacity
-    - Initial/desired SOC
-    - Required energy
-    - Estimated charging time
-  - Uses real/synthetic data (e.g., `ev_true.npy`), shuffled for realistic variability.
-  - Ensures diverse simulation inputs for RL training.
 
 ## 📌 env.py
 
