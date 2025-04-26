@@ -29,8 +29,8 @@ class ConstrainedCEM:
                  penalize_uncertainty=True,
                  cuda=True,
                  ):
-        self.dO, self.dU = 7, 3
-        self.ac_ub, self.ac_lb = np.array([1.4, 1.5, 1.4]), np.array([1.1, 1.44, 1.2])
+        self.dO, self.dU = 8, 3
+        self.ac_ub, self.ac_lb = np.array([1.4, 1.5, 1.4]), np.array([1.1, 1.2, 1.2])
         self.gamma = gamma
         self.c_gamma = c_gamma
 
