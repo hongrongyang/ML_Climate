@@ -1,6 +1,6 @@
-Project: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
-Class:COMS 6998 MACHINE LEARNING & CLIMATE
-Final Presentation: https://youtu.be/ZjWD4cKksg0
+**Project**: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
+**Class**:COMS 6998 MACHINE LEARNING & CLIMATE 
+**Final Presentation**: https://youtu.be/ZjWD4cKksg0
 
 
 ## 📌 ccem.py
