@@ -97,6 +97,6 @@
   -usable_data: Cleaned dataset prepared for simulation.
   -CSs_load: Charging station power variation data for specific areas.
 
--**The charging demand and user behavior parameters are provided by the State Grid Corporation of China; the data cannot be disclosed without desensitization.**
+- **The charging demand and user behavior parameters are provided by the State Grid Corporation of China; the data cannot be disclosed without desensitization.**
 
 
