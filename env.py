@@ -70,14 +70,10 @@ class Env():
         self.electricity_purchase_CS = 0.7
         self.electricity_purchase_MG = 0.5
         self.electricity_purchase_DG = 0.3
-        # self.ratio = [0.9, 0.93, 0.95, 0.97, 0.985, 1, 1.05, 1.06, 1.07, 1.03, 1.02, 1, 0.98]  # 长度和self.u一致
         self.ratio = [0.85, 0.87, 0.9, 0.92, 0.94, 0.98, 1, 1.1, 1.05, 1, 0.97, 0.95, 0.92]
-        # self.ratio3 = [0.85, 0.87, 0.9, 0.92, 0.94, 0.98, 1, 1.1, 1.05, 1, 0.97, 0.95, 0.92]
         self.u = np.array([0.515, 0.46, 0.625, 0.465, 0.525, 0.425, 0.5, 0.435, 0.48, 0.47, 0.38, 0.465])
         self.m = np.array([0.6, 0.625, 0.49, 0.6, 0.565, 0.47, 0.59, 0.535, 0.425, 0.515, 0.5, 0.4])
         self.s = np.array([0.715, 0.66, 0.825, 0.715, 0.675, 0.525, 0.63, 0.57, 0.595, 0.535, 0.48, 0.465])
-        # demand = np.array([8.0, 7.0, 6.0, 5.0, 6.0, 5.0, 6.0, 6.0, 7.0, 6.0, 10.0, 13.0])
-        # self.demand = np.array([6, 5, 4, 4, 5, 3, 4, 4, 5, 5, 8, 8]) * 2
         self.demand1 = np.load("./data_init/demand1.npy")
         self.demand2 = np.load("./data_init/demand2.npy")
         self.demand3 = np.load("./data_init/demand3.npy")
@@ -648,21 +644,12 @@ class Env():
         self.obs.append(load_percentage17 * 100)
         self.obs.append(load_percentage27 * 100)
 
-        # self.obs.append(n_arrival1)
-        # self.obs.append(n_arrival2)
-        # self.obs.append(n_arrival3)
         self.obs.append(self.n1)
         self.obs.append(self.n2)
         self.obs.append(self.n3)
         self.obs.append(social_welfare / 300)
         self.obs.append(weighted_system_carbon_intensity / 300)
 
-        # self.obs.append(p31)
-        # self.obs.append(p13)
-        # self.obs.append(p19)
-        # self.obs.append(v31 * 100)
-        # self.obs.append(v13 * 100)
-        # self.obs.append(v19 * 100)
         self.obs = np.array(self.obs)
 
         # reward
@@ -777,13 +764,10 @@ class Env():
         self.electricity_purchase_CS = 0.7
         self.electricity_purchase_MG = 0.5
         self.electricity_purchase_DG = 0.3
-        # self.ratio = [0.9, 0.93, 0.95, 0.97, 0.985, 1, 1.05, 1.06, 1.07, 1.03, 1.02, 1, 0.98]  # 长度和self.u一致
         self.ratio = [0.85, 0.87, 0.9, 0.92, 0.94, 0.98, 1, 1.1, 1.05, 1, 0.97, 0.95, 0.92]
-        # self.ratio3 = [0.85, 0.87, 0.9, 0.92, 0.94, 0.98, 1, 1.1, 1.05, 1, 0.97, 0.95, 0.92]
         self.u = np.array([0.515, 0.46, 0.625, 0.465, 0.525, 0.425, 0.5, 0.435, 0.48, 0.47, 0.38, 0.465])
         self.m = np.array([0.6, 0.625, 0.49, 0.6, 0.565, 0.47, 0.59, 0.535, 0.425, 0.515, 0.5, 0.4])
         self.s = np.array([0.715, 0.66, 0.825, 0.715, 0.675, 0.525, 0.63, 0.57, 0.595, 0.535, 0.48, 0.465])
-        # demand = np.array([8.0, 7.0, 6.0, 5.0, 6.0, 5.0, 6.0, 6.0, 7.0, 6.0, 10.0, 13.0])
         self.demand1 = np.load("./data_init/demand1.npy")
         self.demand2 = np.load("./data_init/demand2.npy")
         self.demand3 = np.load("./data_init/demand3.npy")
@@ -823,9 +807,6 @@ class Env():
         self.p31 = [p31]
         self.p13 = [p13]
         self.p19 = [p19]
-        # self.v31 = []
-        # self.v13 = []
-        # self.v19 = []
         self.p_cs1 = [0.225]
         self.p_cs2 = [0.225]
         self.p_cs3 = [0.225]
