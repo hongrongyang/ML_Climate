@@ -91,6 +91,9 @@
   - Returns `obs` list and reference values (e.g., base loads at stations).
   - Initializes the environment with realistic conditions before action begins.
 
+## 📌 model_AMS
+- **model_AMS is the saved RL model checkpoint achieving the best rewards within the cost threshold.**
+  
 ## 📌 data
 - **The EV data is available at: https://github.com/hongrongyang/Paper_data**
   -EV_data1 and EV_data2: EV charging station datasets from different regions.
