@@ -31,7 +31,7 @@ def readParser():
     parser.add_argument('--model_retain_epochs', type=int, default=12, metavar='A', help='retain epochs')
     parser.add_argument('--model_train_freq', type=int, default=12, metavar='A', help='frequency of training')
     parser.add_argument('--epoch_length', type=int, default=12, metavar='A', help='steps per epoch')
-    parser.add_argument('--num_epoch', type=int, default=10, metavar='A', help='total number of epochs')
+    parser.add_argument('--num_epoch', type=int, default=50, metavar='A', help='total number of epochs')
     parser.add_argument('--policy_train_batch_size', type=int, default=128, metavar='A',
                         help='batch size for training policy')
     parser.add_argument('--hidden_size', type=int, default=256, metavar='A', help='ensemble model hidden dimension')
