@@ -140,7 +140,3 @@ def obs():
 result = obs()
 obs_values, net1, origin_p31, origin_p13, origin_p19, p31, p13, p19, system_carbon_intensity = result
 
-# Print node-specific carbon intensities
-print("Node-Specific Carbon Intensities (kg CO2/MWh):")
-print(f"weighted_system_carbon_intensity: {system_carbon_intensity:.2f}")
-
