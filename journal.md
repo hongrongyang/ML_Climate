@@ -155,16 +155,20 @@ The focus will shift to end-to-end coordination, global policy performance evalu
 -------
 ### 📅 Week 11 (2025.4.17)
 
-### ✅ Weekly Progress Update
+##### ✅ Weekly Progress Update
 
 This week, we conducted additional research on **carbon trading mechanisms and regional carbon emission profiles**.  
 Our focus included:
 - Carbon emission factors for various energy sources, including coal, wind, and hydro power;
 - Carbon trading market structures in **multiple Chinese cities**, as well as in **New York and California (USA)**.
 
-These insights are intended to inform how we define and implement carbon flow constraints more realistically and policy-aligned within our system.
+We conduct our experiments on a machine with a 5.60 GHz CPU, NVIDIA RTX 4090 GPU, and 64 GB of RAM. The simulation environment integrates three core components: a real-world transportation network, a modified IEEE 33-bus power distribution system, and dynamic electric vehicle (EV) charging demand.
 
-### 🔄 Next Week Plan
+To better focus on carbon emission dynamics, we adopt a simplified network configuration. Specifically, we modify the standard IEEE 33-bus system by removing highly congested lines (e.g., 1–18, 9–10, and 27–28) and reducing topological complexity related to congestion.
+
+Initial results from our integrated **EV–CS–DSO–Grid–Carbon** framework show that while the proposed method improves carbon-aware coordination, both the baseline and our method occasionally exceed the predefined carbon intensity limit.
+
+##### 🔄 Next Week Plan
 
 Next week, we will begin **full-scale integration and optimization** of the complete **EV–CS–DSO–Grid–Carbon** system.
 
@@ -174,3 +178,7 @@ We plan to focus on:
 - Finalizing experimental design and running initial simulations.
 
 We aim to complete most of the work by the end of the weekend and next week, and generate preliminary results for evaluation.
+
+- Hongrong: Responsible for power distribution network and dynamic electric vehicle demand setup.
+- Dongbing: Responsible for transportation network setup and preparation of weekly project memos.
+
