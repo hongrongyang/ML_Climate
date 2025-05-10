@@ -94,12 +94,10 @@ We plan to start formulating carbon emission factors and budget constraints next
 -------
 ### 📅 Week 9 (2025.4.3)
 
-### ✅ Weekly Progress Update
+##### ✅ Weekly Progress Update
 
 This week, our main focus was on implementing the **carbon flow network** within the existing CMDP optimization framework.  
 To improve the environmental sustainability and policy alignment of our original model—designed for EV load scheduling and distribution grid congestion management—we proposed an extension that incorporates **carbon emission modeling and constraints**.
-
-This enhancement supports national carbon neutrality targets (e.g., dual-carbon policy) and can align with external mechanisms such as **carbon trading markets (ETS)**.
 
 ### 🔧 Core Dimensions of the Proposed Extension
 
