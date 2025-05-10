@@ -1,6 +1,6 @@
 
 
-### 🌍 Project Overview: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
+# 🌍 Project Overview: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
 
 Our project is to optimize dynamic price incentives for electric vehicle (EV) charging to simultaneously maximize social welfare, maintain grid safety, and manage carbon emissions. Building on a DRL-based pricing framework that models the price–demand relationship through EV user behavior at charging stations, the project extends the model by adding system carbon intensity as a new state variable and introducing penalty terms for carbon limit violations. The oringal framework that formulates the pricing problem as a limited Markov Decision Process (CMDP), capturing the implicit relationship between price and demand for charging of EVs through user decision modeling. To solve this, a safe deep reinforcement learning framework is proposed and the Adaptive Model Based Safe DRL (AMSDRL) algorithm is developed. The state variables in original framework only include the distribution of electric vehicles in the charging stations and the operational status of the grid.
 
@@ -21,7 +21,7 @@ So Let's start with our project !!
 
 -------
 
-### 📅 Week 8 (2025.3.27)
+#### 📅 Week 8 (2025.3.27)
 After careful discussion and planning, we decided to **extend our project** by incorporating **additional carbon flow constraints** into the original EV–CS–DSO–Grid coupled optimization framework.
 
 Our project builds upon Hongrong's previous work:  
@@ -41,9 +41,7 @@ A key aspect lies in the **Grid and DSO integration**:
 In the original paper, Hongrong develops a flow-based CMDP framework with multiple constraint formulations, including:
 [Please Reference: https://ieeexplore.ieee.org/abstract/document/10298595]
 
-## 🔒 Constraint Summary Table (CS / DSO / Grid Constraints)
-
-### 🧾 CS Constraints (Charging Station)
+##### 🔒 Constraint Summary Table (CS / DSO / Grid Constraints)
 | Constraint No. | Name                          | Description                                                                 |
 |----------------|-------------------------------|-----------------------------------------------------------------------------|
 | (29)           | CS Profit Definition          | Defines net profit of CS as revenue minus electricity purchase cost.       |
@@ -52,7 +50,7 @@ In the original paper, Hongrong develops a flow-based CMDP framework with multip
 | (32)           | CS Pricing Composition        | Breaks down charging price into power cost, service fee, and incentive fee.|
 | (33)           | CS Incentive Price Bound      | Enforces upper and lower bounds on incentive pricing.                      |
 
-### 🏢 DSO Constraints (Distribution System Operator)
+##### 🏢 DSO Constraints (Distribution System Operator)
 | Constraint No. | Name                          | Description                                                                 |
 |----------------|-------------------------------|-----------------------------------------------------------------------------|
 | (34)           | DSO Profit Definition         | Net profit as revenue from EVs minus cost of main and distributed power.   |
@@ -60,7 +58,7 @@ In the original paper, Hongrong develops a flow-based CMDP framework with multip
 | (36)           | Distributed Source Cost       | Calculates cost of purchasing electricity from distributed sources.        |
 | (37)           | CS Load Aggregation           | Ensures total charging load equals sum of supply from main and distributed sources. |
 
-### ⚡ Grid Constraints (Power Flow & Physical Feasibility)
+##### ⚡ Grid Constraints (Power Flow & Physical Feasibility)
 | Constraint No. | Name                          | Description                                                                 |
 |----------------|-------------------------------|-----------------------------------------------------------------------------|
 | (38)           | Power Balance Equation        | Enforces conservation of active and reactive power across the network.     |
@@ -70,7 +68,7 @@ In the original paper, Hongrong develops a flow-based CMDP framework with multip
 | (42)           | Line Current Limit            | Restricts maximum current flow on each distribution line.                  |
 | (43)           | Line Utilization Constraint   | Limits the ratio of actual power flow to line capacity to prevent overload.|
 
-### ✅ Weekly Progress Update
+##### ✅ Weekly Progress Update
 
 This week, we mainly focused on **reviewing the original implementation**, re-setting the environment, and understanding key constraints in the CMDP optimization model.
 
@@ -79,7 +77,7 @@ We did not add new modules, but we have begun preparing for next week’s extens
 
 To support this, we surveyed related research in **carbon-aware power dispatch and optimization**.
 
-#### 🔍 Related Research Surveyed (not limited to):
+##### 🔍 Related Research Surveyed (not limited to):
 | Topic                    | Recommended Study                                                                 |
 |--------------------------|------------------------------------------------------------------------------------|
 | Low-carbon dispatch      | Wang et al. (IEEE TSG): *Low-carbon economic dispatch with carbon pricing*       |
