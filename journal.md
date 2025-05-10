@@ -183,7 +183,7 @@ We aim to complete most of the work by the end of the weekend and next week, and
 - Dongbing: Responsible for transportation network setup and preparation of weekly project memos.
 
 -------
-### 📅 Week 11 (2025.4.24)
+### 📅 Week 12 (2025.4.24)
 
 ##### ✅ Weekly Progress Update
 
@@ -205,7 +205,7 @@ Next week, we will further refine the system based on feedback received during t
 - Dongbing: Responsible for updating architecture figures, completing remaining slides, and writing the weekly project memo.
 
 -------
-### 📅 Week 12 (2025.5.1)
+### 📅 Week 13 (2025.5.1)
 
 ##### ✅ Weekly Progress Update
 
@@ -221,7 +221,7 @@ Next week, we will focus on organizing our code, refining visualizations, and su
 - Dongbing: Attend class and write the weekly project memo.
 
 -------
-### 📅 Week 13 (2025.5.8)
+### 📅 Week 14 (2025.5.8)
 
 ##### ✅ Weekly Progress Update
 
