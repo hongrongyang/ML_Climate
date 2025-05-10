@@ -142,7 +142,7 @@ At a high level, enhancements includes:
 
 - Carbon Constraint Cost Term: Triggers penalty when the system-wide carbon intensity `CI_sw` exceeds the target limit `CI_max`. This ensures carbon emissions are constrained in the policy decisions.
 
-- Grid Congestion Cost Term (`Eq. 15`): Penalizes violations on key transmission lines if the power flow exceeds allowed thresholds `ϕ_max`. Prevents the model from creating congestion while rebalancing EV loads.
+- Grid Congestion Cost Term: Penalizes violations on key transmission lines if the power flow exceeds allowed thresholds `ϕ_max`. Prevents the model from creating congestion while rebalancing EV loads.
 
 ##### 🔄 Next Week Plan
 Next week, we will begin full-scale integration and optimization of the **EV–CS–DSO–Grid–Carbon** system.  
