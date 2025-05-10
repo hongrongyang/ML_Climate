@@ -1,4 +1,4 @@
-# 🌍 Project Overview: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
+## 🌍 Project Overview: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
 
 Our project is to optimize dynamic price incentives for electric vehicle (EV) charging to simultaneously maximize social welfare, maintain grid safety, and manage carbon emissions. Building on a DRL-based pricing framework that models the price–demand relationship through EV user behavior at charging stations, the project extends the model by adding system carbon intensity as a new state variable and introducing penalty terms for carbon limit violations. The oringal framework that formulates the pricing problem as a limited Markov Decision Process (CMDP), capturing the implicit relationship between price and demand for charging of EVs through user decision modeling. To solve this, a safe deep reinforcement learning framework is proposed and the Adaptive Model Based Safe DRL (AMSDRL) algorithm is developed. The state variables in original framework only include the distribution of electric vehicles in the charging stations and the operational status of the grid.
 
@@ -182,3 +182,58 @@ We aim to complete most of the work by the end of the weekend and next week, and
 - Hongrong: Responsible for power distribution network and dynamic electric vehicle demand setup.
 - Dongbing: Responsible for transportation network setup and preparation of weekly project memos.
 
+-------
+### 📅 Week 11 (2025.4.24)
+
+##### ✅ Weekly Progress Update
+
+This week, we began optimizing our system to further improve carbon-aware performance and overall policy robustness. Key optimization steps included:
+
+- Hyperparameter tuning: in the DRL framework to improve convergence and reduce policy variance.
+- Reward function refinement: to better balance social welfare, grid safety, and emission penalties.
+- Adjustment of constraint weights: to more tightly enforce carbon intensity limits without compromising system feasibility.
+
+Our updated results clearly highlight the benefit of carbon-aware control. At the carbon intensity threshold of 790 gCO₂/kWh, the control group—which lacks carbon constraints—frequently exceeds this limit, particularly at peak hours. In contrast, our proposed method successfully keeps carbon intensity below the threshold across nearly all time steps. This confirms the effectiveness of our dynamic pricing mechanism in guiding EV behavior toward decarbonization goals.
+
+Additionally, we completed our final presentation slides and recorded a video demo to showcase the system workflow and results.
+
+##### 🔄 Next Week Plan
+
+Next week, we will further refine the system based on feedback received during the class presentation. Tasks will focus on enhancing visual clarity, strengthening the model, and polishing deliverables.
+
+- Hongrong: Focus on final model optimization and slides (method section).
+- Dongbing: Responsible for updating architecture figures, completing remaining slides, and writing the weekly project memo.
+
+-------
+### 📅 Week 12 (2025.5.1)
+
+##### ✅ Weekly Progress Update
+
+This week, we participated in the class presentation session and gained valuable insights from our classmates work and feedback. We are especially grateful to the professor for the constructive suggestions—such as clarifying the methodology and mathematical formulations in our final report, and explicitly explaining whether the pricing signal is modeled as discrete or continuous over time.
+
+We truly appreciate this course for broadening our perspective on reinforcement learning and its applications.
+
+##### 🔄 Next Week Plan
+
+Next week, we will focus on organizing our code, refining visualizations, and summarizing key insights to complete the final project report.
+
+- Hongrong: Attend class and organize our code
+- Dongbing: Attend class and write the weekly project memo.
+
+-------
+### 📅 Week 13 (2025.5.8)
+
+##### ✅ Weekly Progress Update
+
+This marks the final weekly post for our project. In conclusion, our work extends a model-based safe deep reinforcement learning (DRL) framework for dynamic electric vehicle (EV) pricing by incorporating carbon intensity as a new optimization constraint. By embedding system-level carbon metrics into the CMDP formulation, the enhanced AMSDRL algorithm learns pricing policies that balance social welfare, grid safety, and carbon emissions.
+
+Simulation results on a coupled transportation network and a modified IEEE 33-bus distribution system show that the proposed method effectively reduces carbon intensity violations, maintains grid stability, and improves EV load distribution. Compared to the baseline without carbon constraints, our method keeps carbon intensity below the defined threshold while achieving stable training performance and better environmental outcomes.
+
+Throughout this course, we gained a deeper understanding of how machine learning can help address climate challenges across sectors like power systems, manufacturing, and buildings. Through both class readings and our independent research, we explored carbon emission and climate policy frameworks. These included emission levels of different power generation types (e.g., coal, wind, solar), and carbon trading mechanisms in different countries—particularly comparing the U.S. and China.
+
+Given that our transportation network was based in Shenzhen, China, we also studied regional carbon constraints across Chinese provinces, with a special focus on Guangdong. We explored the province’s power dispatch system and the interaction mechanisms between the grid, generation, and end-users under carbon-aware regulations.
+
+We’re extremely grateful to have taken **COMS 6998: Machine Learning and Climate** with **Professor Alp Kucukelbir** and all the brilliant classmates in this course. It’s been one of the most inspiring and practically relevant classes in the Columbia Computer Science Department. We highly recommend it to anyone interested in applying ML to real-world climate and energy challenges.
+
+- Hongrong: Responsible for final report  
+- Dongbing: Responsible for final report and weekly project memo
