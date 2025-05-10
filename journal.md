@@ -1,8 +1,8 @@
 
 
-### 🌍 Project Overview: Enhancing EV–Grid Coordination with Carbon-Aware Optimization
+### 🌍 Project Overview: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
 
-Our project builds on an existing framework that coordinates electric vehicle (EV) charging, charging station (CS) pricing, and distribution system operator (DSO) decision-making to manage real-time congestion in power distribution networks. The original system formulates this multi-agent interaction as a constrained Markov Decision Process (CMDP), aiming to maximize social welfare by balancing user satisfaction, electricity cost, and grid stability. It integrates power flow equations, queueing dynamics, and incentive pricing into a unified optimization process.
+Our project is to optimize dynamic price incentives for electric vehicle (EV) charging to simultaneously maximize social welfare, maintain grid safety, and manage carbon emissions. Building on a DRL-based pricing framework that models the price–demand relationship through EV user behavior at charging stations, the project extends the model by adding system carbon intensity as a new state variable and introducing penalty terms for carbon limit violations. The oringal framework that formulates the pricing problem as a limited Markov Decision Process (CMDP), capturing the implicit relationship between price and demand for charging of EVs through user decision modeling. To solve this, a safe deep reinforcement learning framework is proposed and the Adaptive Model Based Safe DRL (AMSDRL) algorithm is developed. The state variables in original framework only include the distribution of electric vehicles in the charging stations and the operational status of the grid.
 
 To improve the environmental accountability and policy relevance of this framework, we extend the system by introducing a **carbon flow layer**. Specifically, we:
 
