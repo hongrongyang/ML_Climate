@@ -97,11 +97,11 @@
 - **model_AMS is the saved RL model checkpoint achieving the best rewards within the cost threshold.**
   
 #### 📌 data
-- **The EV data is available at: https://github.com/hongrongyang/Paper_data**
-  -EV_data1 and EV_data2: EV charging station datasets from different regions.
-  -usable_data: Cleaned dataset prepared for simulation.
-  -CSs_load: Charging station power variation data for specific areas.
-
+- **The EV data is available at: https://github.com/hongrongyang/Paper_data**:
+  - EV_data1 and EV_data2: EV charging station datasets from different regions.
+  - usable_data: Cleaned dataset prepared for simulation.
+  - CSs_load: Charging station power variation data for specific areas.
+  - 
 - **The charging demand data is provided by the State Grid Corporation of China, which cannot be disclosed without desensitization.**
 
 
