@@ -87,6 +87,7 @@ To support this, we surveyed related research in **carbon-aware power dispatch a
 
 We plan to start formulating carbon emission factors and budget constraints next week.
 
+----------------------------------------------------------------------
 - Hongrong: Focus on code revisit and environment setup and take responsibility for industry research.
 - Dongbing: Focus on code revisit and environment setup with the help of Hongrong, take responsibility for industry research and rewrite the project memos.
 
@@ -121,8 +122,9 @@ Next week, we will focus on **integrating the carbon-aware mechanism with the DR
 - Embedding carbon-aware safety constraints within the policy learning process;
 - Evaluating trade-offs between economic efficiency and environmental impact via DRL simulations.
 
+----------------------------------------------------------------------
 - Hongrong: Responsible for the derivation and explanation of the first four equations.
-- ongbing: Responsible for the last two equations and preparation of weekly project memos.
+- Dongbing: Responsible for the last two equations and preparation of weekly project memos.
 
 -------
 ### 📅 Week 10 (2025.4.10)
