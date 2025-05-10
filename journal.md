@@ -87,7 +87,6 @@ To support this, we surveyed related research in **carbon-aware power dispatch a
 
 We plan to start formulating carbon emission factors and budget constraints next week.
 
-----------------------------------------------------------------------
 - Hongrong: Focus on code revisit and environment setup and take responsibility for industry research.
 - Dongbing: Focus on code revisit and environment setup with the help of Hongrong, take responsibility for industry research and rewrite the project memos.
 
@@ -122,7 +121,7 @@ Next week, we will focus on **integrating the carbon-aware mechanism with the DR
 - Embedding carbon-aware safety constraints within the policy learning process;
 - Evaluating trade-offs between economic efficiency and environmental impact via DRL simulations.
 
-----------------------------------------------------------------------
+
 - Hongrong: Responsible for the derivation and explanation of the first four equations.
 - Dongbing: Responsible for the last two equations and preparation of weekly project memos.
 
@@ -130,19 +129,27 @@ Next week, we will focus on **integrating the carbon-aware mechanism with the DR
 ### 📅 Week 10 (2025.4.10)
 
 ##### ✅ Weekly Progress Update
-This week, we focused on connecting our carbon-aware system with the DRL controller. The main goal was to ensure that the policy can make decisions not only based on user satisfaction and grid safety, but also by considering carbon emissions.
+This week, we focused on coupling the carbon intensity modeling with the DRL controller to enable environmentally aware policy learning. The goal was to ensure the pricing agent not only optimizes for user welfare and grid safety, but also respects system-wide carbon emission limits.
 
-At a high level, we implemented three major enhancements:
-- **State Representation Extension**  
-  Incorporated carbon-related features—such as local emission factors and current carbon budget—into the agent’s state space.
-- **Reward Signal Redesign**  
-  Adjusted the reward function to reflect trade-offs between user satisfaction, network congestion, and environmental impact.
-- **Safety Constraint Integration**  
-  Treated the carbon budget as a cost constraint within the DRL framework, enabling safe policy learning under carbon limits.
+At a high level, enhancements includes:
+- CMDP-Based Policy Learning: We formulated the problem as a Constrained Markov Decision Process (CMDP), where the agent maximizes long-term reward while satisfying safety constraints on system cost (e.g., carbon violations).
+
+- Adaptive Cost Scaling: Introduced an ensemble-based uncertainty-aware cost function. The scaling factor `β` is adaptively tuned to balance safety and exploration during training.
+
+- Extended State and Reward Design: equations to reflect the multi-objective nature of the system.
+  - Reward `r_t` = scaled social welfare  
+  - Cost `c_t` = carbon intensity cost `c_t^ci` + grid congestion cost `c_t^g`  
+
+- Carbon Constraint Cost Term: Triggers penalty when the system-wide carbon intensity `CI_sw` exceeds the target limit `CI_max`. This ensures carbon emissions are constrained in the policy decisions.
+
+- Grid Congestion Cost Term (`Eq. 15`): Penalizes violations on key transmission lines if the power flow exceeds allowed thresholds `ϕ_max`. Prevents the model from creating congestion while rebalancing EV loads.
 
 ##### 🔄 Next Week Plan
 Next week, we will begin full-scale integration and optimization of the **EV–CS–DSO–Grid–Carbon** system.  
 The focus will shift to end-to-end coordination, global policy performance evaluation, and scenario-based analysis.
+
+- Hongrong: Responsible for the first four enhanvements.
+- Dongbing: Responsible for the last two enhanvements and preparation of weekly project memos.
 
 
 -------
