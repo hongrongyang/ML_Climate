@@ -1,5 +1,3 @@
-
-
 # 🌍 Project Overview: Dynamic Price Incentive for EV Decarbonization Management in Distribution Network
 
 Our project is to optimize dynamic price incentives for electric vehicle (EV) charging to simultaneously maximize social welfare, maintain grid safety, and manage carbon emissions. Building on a DRL-based pricing framework that models the price–demand relationship through EV user behavior at charging stations, the project extends the model by adding system carbon intensity as a new state variable and introducing penalty terms for carbon limit violations. The oringal framework that formulates the pricing problem as a limited Markov Decision Process (CMDP), capturing the implicit relationship between price and demand for charging of EVs through user decision modeling. To solve this, a safe deep reinforcement learning framework is proposed and the Adaptive Model Based Safe DRL (AMSDRL) algorithm is developed. The state variables in original framework only include the distribution of electric vehicles in the charging stations and the operational status of the grid.
@@ -102,31 +100,19 @@ We plan to start formulating carbon emission factors and budget constraints next
 This week, our main focus was on implementing the **carbon flow network** within the existing CMDP optimization framework.  
 To improve the environmental sustainability and policy alignment of our original model—designed for EV load scheduling and distribution grid congestion management—we proposed an extension that incorporates **carbon emission modeling and constraints**.
 
-### 🔧 Core Dimensions of the Proposed Extension
+The carbon intensity formulation aims to quantify how much carbon is emitted per unit of electricity (gCO₂/kWh) within a power distribution network.
 
-#### 1. Carbon Flow Modeling: Power → Carbon
-- Assign a **carbon intensity factor** to each type of electricity source (e.g., grid supply, distributed energy), denoted as \( \rho_{n,t}^{CO2} \), representing CO₂ emissions per kWh.
-- Introduce a **carbon budget variable** to dynamically track total emissions across buses and time periods.
+- Equation (1): Total Injected Power: Calculates the total amount of electricity entering the system by summing the outputs of generators, static (renewable) sources, and external grid imports.
 
-#### 2. Carbon Budget Constraints & Cost Mechanisms
-- Set a **global carbon constraint** (e.g., \( \sum CO_2 \leq \text{target}_t \)) to cap total emissions within the system.
-- Alternatively, model emissions as a **penalty or tax term**, and embed it in the DSO or social welfare objective.
-- Use a **shadow price of carbon** or ETS market price to represent marginal emission costs.
+- Equation (2): Power Source Contribution Ratios: Determines how much each type of source (e.g., generator, solar, grid) contributes to the total power supply. These ratios are later used to weight carbon emissions.
 
-#### 3. Objective Function Enhancement: Economic + Environmental
-- The original objective aimed to **maximize total social welfare**, combining: Charging station profit，EV user benefit and DSO net profit 
-- We now formulate a **multi-objective optimization**, adjusting the goal as:
-  - `Maximized Objective = Social Welfare – Carbon Cost × Total Emissions`
+- Equation (3): System-Wide Carbon Intensity: Computes the average carbon intensity of the system by combining each source's carbon footprint with its contribution ratio.
 
-### 🧱 Implementation Building Blocks (not limited to):
+- Equation (4): Node-Level Assignment: Assumes the carbon intensity is uniformly spread across all buses (nodes) in the system. This simplifies the calculation by assigning the same carbon value to each node.
 
-| Component                        | Description                                                                                       |
-|----------------------------------|---------------------------------------------------------------------------------------------------|
-| Carbon Factor Definition         | Assign emission factor \( \rho_{n,t}^{CO2} \) to each energy source (e.g., grid, distributed, zero-emission). |
-| Node-Level Carbon Flow Modeling  | Calculate emissions at each bus based on power consumption and source-specific emission factors. |
-| Carbon Budget Constraint         | Add a system-wide constraint on total emissions to stay within a predefined carbon cap.          |
-| Objective Function Penalty Term  | Introduce carbon tax or shadow price into the objective to penalize emissions.                   |
-| Multi-objective Formulation      | Expand original goal to balance social welfare and environmental sustainability.                 |
+- Equation (5): Load-Weighted Carbon Intensity: Provides a refined system-wide carbon intensity that takes into account how much electricity is consumed at each node. Heavily loaded nodes have more influence on the average.
+
+- Equation (6): Node-Specific Carbon Intensity: Further refines carbon intensity by considering how electricity from different sources is actually distributed to each node, using allocation factors.
 
 ### 🔄 Next Week Plan
 
@@ -135,11 +121,13 @@ Next week, we will focus on **integrating the carbon-aware mechanism with the DR
 - Embedding carbon-aware safety constraints within the policy learning process;
 - Evaluating trade-offs between economic efficiency and environmental impact via DRL simulations.
 
+- Hongrong: Responsible for the derivation and explanation of the first four equations.
+- ongbing: Responsible for the last two equations and preparation of weekly project memos.
 
 -------
 ### 📅 Week 10 (2025.4.10)
 
-### ✅ Weekly Progress Update
+##### ✅ Weekly Progress Update
 This week, we focused on connecting our carbon-aware system with the DRL controller. The main goal was to ensure that the policy can make decisions not only based on user satisfaction and grid safety, but also by considering carbon emissions.
 
 At a high level, we implemented three major enhancements:
@@ -150,7 +138,7 @@ At a high level, we implemented three major enhancements:
 - **Safety Constraint Integration**  
   Treated the carbon budget as a cost constraint within the DRL framework, enabling safe policy learning under carbon limits.
 
-### 🔄 Next Week Plan
+##### 🔄 Next Week Plan
 Next week, we will begin full-scale integration and optimization of the **EV–CS–DSO–Grid–Carbon** system.  
 The focus will shift to end-to-end coordination, global policy performance evaluation, and scenario-based analysis.
 
