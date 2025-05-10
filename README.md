@@ -5,9 +5,9 @@
 **Final Presentation**: https://youtu.be/ZjWD4cKksg0
 
 
-## Github Structure
+# GitHub Repository Structure
 
-### 📌 ccem.py
+#### 📌 ccem.py
 
 - **Purpose**: Implements the Constrained Cross-Entropy Method (CEM) agent.
 - **Functionality**:
@@ -19,7 +19,7 @@
   - Can optionally learn `kappa` during training.
 
 
-### 📌 env.py
+#### 📌 env.py
 
 - **Purpose**: Simulates the EV charging environment (grid + transport).
 - **Functionality**:
@@ -37,7 +37,7 @@
     - Grid safety (line overloads/voltage drops)
     - Partial implementation for carbon intensity constraints.
 
-## 📌 main.py
+#### 📌 main.py
 
 - **Purpose**: Orchestrates training and main execution.
 - **Functionality**:
@@ -58,7 +58,7 @@
     - Updates `kappa` in constraint-aware mode.
   - Solves bi-level pricing problem via safe RL.
 
-## 📌 models.py
+#### 📌 models.py
 
 - **Purpose**: Defines probabilistic ensemble model of environment dynamics.
 - **Functionality**:
@@ -78,7 +78,7 @@
     - Adds regularization.
   - Enables uncertainty-aware planning and conservative decisions.
 
-## 📌 obs_gene.py
+#### 📌 obs_gene.py
 
 - **Purpose**: Generates initial observation (grid + load setup).
 - **Functionality**:
@@ -93,10 +93,10 @@
   - Returns `obs` list and reference values (e.g., base loads at stations).
   - Initializes the environment with realistic conditions before action begins.
 
-## 📌 model_AMS
+#### 📌 model_AMS
 - **model_AMS is the saved RL model checkpoint achieving the best rewards within the cost threshold.**
   
-## 📌 data
+#### 📌 data
 - **The EV data is available at: https://github.com/hongrongyang/Paper_data**
   -EV_data1 and EV_data2: EV charging station datasets from different regions.
   -usable_data: Cleaned dataset prepared for simulation.
