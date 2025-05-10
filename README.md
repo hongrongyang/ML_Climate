@@ -5,7 +5,9 @@
 **Final Presentation**: https://youtu.be/ZjWD4cKksg0
 
 
-## 📌 ccem.py
+## Github Structure
+
+# 📌 ccem.py
 
 - **Purpose**: Implements the Constrained Cross-Entropy Method (CEM) agent.
 - **Functionality**:
@@ -17,7 +19,7 @@
   - Can optionally learn `kappa` during training.
 
 
-## 📌 env.py
+# 📌 env.py
 
 - **Purpose**: Simulates the EV charging environment (grid + transport).
 - **Functionality**:
