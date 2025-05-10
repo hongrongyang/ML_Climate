@@ -89,8 +89,8 @@ To support this, we surveyed related research in **carbon-aware power dispatch a
 
 We plan to start formulating carbon emission factors and budget constraints next week.
 
-- Hongrong: Focus on code revisit and environment setup, industry research.
-- Dongbing: Focus on code revisit and environment setup with the help of Hongrong and take more responsibility for industry research.
+- Hongrong: Focus on code revisit and environment setup and take responsibility for industry research.
+- Dongbing: Focus on code revisit and environment setup with the help of Hongrong, take responsibility for industry research and rewrite the project memos.
 
 
 
