@@ -78,11 +78,14 @@ We did not add new modules, but we have begun preparing for next week’s extens
 To support this, we surveyed related research in **carbon-aware power dispatch and optimization**.
 
 ##### 🔍 Related Research Surveyed (not limited to):
-| Topic                    | Recommended Study                                                                 |
-|--------------------------|------------------------------------------------------------------------------------|
-| Low-carbon dispatch      | Wang et al. (IEEE TSG): *Low-carbon economic dispatch with carbon pricing*       |
-| DRL + Carbon coordination| *Safe Multi-agent RL for Carbon-aware Energy Management*, NeurIPS workshop       |
-| Carbon trading modeling  | Zhang et al., *Incorporating Carbon Trading into Smart Grid Dispatch Optimization*, Applied Energy |
+| Topic                                   | Recommended Study |
+|----------------------------------------|-------------------|
+| Coordinated Power and Transportation Operation | T. Qian et al. (2020), *Enhanced coordinated operations of electric power and transportation networks via EV charging services*, IEEE TSG |
+| MARL for V2V Charging Coordination      | J. Fan et al. (2023), *MARL for decentralized EV charging coordination with V2V exchange*, IECON 2023 |
+| DRL-based EV Driving                    | H. Cha et al. (2023), *Operation strategy of EV aggregators in integrated power and transportation systems*, IEEE Access |
+| Bi-level DRL for PEV Guidance           | Q. Xing et al. (2023), *Bi-level DRL for PEV decision-making in transportation-electrification systems*, Frontiers in Energy Research |
+| Offline/Online DRL for Carbon Scheduling| V. Chifu et al. (2024), *Smart scheduling of EVs for demand response using DQL*, arXiv: [2401.02653](https://arxiv.org/abs/2401.02653) |
+| Safe DRL under Model Uncertainty        | Y. Ma et al. (2022), *Conservative and adaptive penalty for model-based safe RL*, AAAI 2022 |
 
 We plan to start formulating carbon emission factors and budget constraints next week.
 
